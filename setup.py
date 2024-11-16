@@ -24,7 +24,7 @@ class PostInstallCommand(install):
 
 setup(
     name='ebook2audiobook',
-    version='2.0.1b',
+    version='2.0.0b',
     python_requires=">=3.10,<3.12",
     author="Drew Thomasson",
     description="Convert eBooks to audiobooks with chapters and metadata",
