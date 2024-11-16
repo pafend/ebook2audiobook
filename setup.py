@@ -41,7 +41,7 @@ setup(
     include_package_data=True,
     entry_points={
         "console_scripts": [
-            "ebook2audiobook = app:main",
+            "ebook2audiobook = ebook2audiobook.app:main",
         ],
     },
     cmdclass={
