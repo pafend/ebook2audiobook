@@ -814,7 +814,8 @@ def convert_chapters_to_audio(device, temperature, length_penalty, repetition_pe
 
                     # Calculate total fragments for this chapter
                     for sentence in sentences:
-                        fragments = split_long_sentence(sentence, language=language)
+                        #fragments = split_long_sentence(sentence, language=language)
+                        fragments = fragments
                         total_segments += len(fragments)
 
         current_progress = 0
@@ -865,7 +866,7 @@ def convert_chapters_to_audio(device, temperature, length_penalty, repetition_pe
                                     out = tts.inference(
                                         fragment, language, gpt_cond_latent, speaker_embedding, 
                                         temperature=temperature, repetition_penalty=repetition_penalty, 
-                                        top_k=top_k, top_p=top_p, speed=speed, enable_text_splitting=enable_text_splitting
+                                        top_k=top_k, top_p=top_p, speed=speed, enable_text_splitting=True
                                     )
                                     torchaudio.save(fragment_file_path, torch.tensor(out["wav"]).unsqueeze(0), 24000)
                                     #else:
